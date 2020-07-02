@@ -7,6 +7,7 @@
 // input 1 1, output 0
 
 //instantiate a new network with brain.js
+//the more hidden layers the longer it takes to train
 const net = new brain.NeuralNetwork({ hiddenLayers: [3]});
 //Literally the data to train the brain
 const trainingData = [
@@ -17,7 +18,7 @@ const trainingData = [
 ];
 
 //the training being run
-//also logging the measuring AKA errors until the net catches on
+//also logging the measuring AKA errors until the net catches on  
 net.train(trainingData, {
   log: (error) => console.log(error),
   logPeroid: 100
