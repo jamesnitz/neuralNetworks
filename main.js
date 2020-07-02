@@ -17,7 +17,11 @@ const trainingData = [
 ];
 
 //the training being run
-net.train(trainingData);
+//also logging the measuring AKA errors until the net catches on
+net.train(trainingData, {
+  log: (error) => console.log(error),
+  logPeroid: 100
+});
 
 //using a neural net, it's very hard for them to get exactly to 0 or 1, but they can get close
 console.log(net.run([0, 0])) //[0.057399265468120575]
